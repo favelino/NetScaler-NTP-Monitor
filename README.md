@@ -30,3 +30,13 @@ Save this Perl script below  in your NetScaler's /nsconfig/monitors/ directory.
 Provide the proper permissions to execute the Script from NetScaler Shell	
 
 chmod +x  /netscaler/monitors/stratum.pl	
+
+
+NetScaler CLI Commands
+
+Use the commands below to create the monitor in the NetScaler CLI:
+
+Make sure to let increase the interval time, in this case it was increased to 10 and the response timeout to 5. The default timers don't work.
+
+add lb monitor ntp-stratum-monitor USER -scriptName stratum.pl -dispatcherIP 127.0.0.1 -dispatcherPort 3013 -LRTM DISABLED -interval 10 -resptimeout 5
+
